@@ -70,18 +70,19 @@
 				.attr("transform", "translate(" + (width/2) + "," + (height/2) + ")")
 				.style("isolation", "isolate");
 
-			var colors = ["#2c7bb6", "#00a6ca","#00ccbc","#90eb9d","#ffff8c","#f9d057","#f29e2e","#e76818","#d7191c"];
+			//var colors = ["#2c7bb6", "#00a6ca","#00ccbc","#90eb9d","#ffff8c","#f9d057","#f29e2e","#e76818","#d7191c"];
+			var colors = ["#ffffff"];
 
 			//Create dataset with random initial positions
 			randStart = [];
-			for(var i = 0; i < 6*colors.length; i++) {
+			for(var i = 0; i < 30; i++) {
 				randStart.push({
 					rHex: Math.random() * hexWidth,
 					theta: Math.random() * 2 * Math.PI,
 					//theta: Math.random() * Math.PI * 0.5,
 					r: 4 + Math.random() * 25
 				});
-			}//for i
+			}
 
 			//Background rectangle
 			circleWrapperInner.append("rect")
@@ -101,7 +102,7 @@
 		      	.style("fill", function(d,i) {
 		      		return colors[i%colors.length];
 		      	})
-				.style("opacity", 1)
+				.style("opacity", .7)
 				.style("mix-blend-mode", "screen")
 				.each(move);
 
@@ -177,9 +178,8 @@
 					.style("mix-blend-mode", "screen")
 					.each("end", move);
 
-			}//function move
+			}//function move TEST
 
 		</script>
-
 	</body>
 </html>
